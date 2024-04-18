@@ -79,7 +79,7 @@ const allUsers = asyncHandler(async (req, res) => {
     const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
     // $ne means "not equal" to, it is used so that in the search results user's id won't be displayed (i.e. if you are searching, your id won't be displayed)
 
-    console.log(users)
+    // console.log(users)
     res.send(users);
 })
 

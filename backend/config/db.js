@@ -6,7 +6,7 @@ const connectDB = async () => {
             // useNewUrlParser: true,s
         });
 
-        console.log('Mongidb connected', conn.connection.host);
+        // console.log('Mongidb connected', conn.connection.host);
     }
     catch (error) {
         console.log(`error ${error.message}`);

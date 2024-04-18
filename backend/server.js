@@ -67,7 +67,7 @@ io.on("connection", (socket) => {
     });
     socket.on("join chat", (room) => {
         socket.join(room);
-        console.log("User Joined Room: " + room);
+        // console.log("User Joined Room: " + room);
     });
 
 
@@ -88,7 +88,7 @@ io.on("connection", (socket) => {
     });
 
     socket.off("setup", () => {
-        console.log("USER DISCONNECTED");
+        // console.log("USER DISCONNECTED");
         socket.leave(userData._id);
     });
 });

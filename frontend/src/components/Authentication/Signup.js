@@ -6,12 +6,15 @@ import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { ChatState } from "../../Context/ChatProvider";
 
 const Signup = () => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
     const toast = useToast();
     const history = useHistory();
+    const { setUser } = ChatState();
+
 
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -60,7 +63,7 @@ const Signup = () => {
                 },
                 config
             );
-            console.log(data);
+            // console.log(data);
             toast({
                 title: "Registration Successful",
                 status: "success",
@@ -68,6 +71,7 @@ const Signup = () => {
                 isClosable: true,
                 position: "bottom",
             });
+            setUser(data);
             localStorage.setItem("userInfo", JSON.stringify(data));
             setPicLoading(false);
             history.push("/chats");
@@ -97,7 +101,7 @@ const Signup = () => {
             });
             return;
         }
-        console.log(pics);
+        // console.log(pics);
         if (pics.type === "image/jpeg" || pics.type === "image/png") {
             const data = new FormData();
             data.append("file", pics);
@@ -110,7 +114,7 @@ const Signup = () => {
                 .then((res) => res.json())
                 .then((data) => {
                     setPic(data.url.toString());
-                    console.log(data.url.toString());
+                    // console.log(data.url.toString());
                     setPicLoading(false);
                 })
                 .catch((err) => {

@@ -162,7 +162,7 @@ function SideDrawer() {
                             <i className="fa-solid fa-bell"></i>
 
                         </MenuButton>
-                        <MenuList pl={2}>
+                        <MenuList pl={2} backgroundColor={"#23262f"}>
                             {!notification.length && "No New Messages"}
                             {notification.map((notif) => (
                                 <MenuItem key={notif._id}
@@ -170,6 +170,7 @@ function SideDrawer() {
                                         setSelectedChat(notif.chat);
                                         setNotification(notification.filter((n) => n !== notif));
                                     }}
+                                    backgroundColor={"#23262f"}
                                 >
                                     {notif.chat.isGroupChat
                                         ? `New message in ${notif.chat.chatName}`

@@ -26,7 +26,7 @@ const MyChats = ({ fetchAgain }) => {
             };
 
             const { data } = await axios.get("/api/chat", config);
-            console.log(data);
+            // console.log(data);
             setChats(data);
         } catch (error) {
             toast({
@@ -53,7 +53,7 @@ const MyChats = ({ fetchAgain }) => {
             alignItems="center"
             p={3}
             backgroundColor={"#23262f"}
-            w={{ base: "100%", md: "31%" }}
+            minW={{ base: "100%", md: "31%" }}
             borderRadius={15}
         >
             <Box
@@ -65,6 +65,7 @@ const MyChats = ({ fetchAgain }) => {
                 w="100%"
                 justifyContent="space-between"
                 alignItems="center"
+
             // overflowY="auto"
             >
                 My Chats
@@ -83,15 +84,14 @@ const MyChats = ({ fetchAgain }) => {
                 display="flex"
                 flexDir="column"
                 p={3}
-                // bg="#F8F8F8"
-                // w="100%"
+                w="100%"
                 // h="100%"
                 // borderRadius="lg"
                 // overflowY="hidden"
                 overflowY="auto"
             >
                 {chats ? (
-                    <Stack >
+                    <Stack w={"100%"}>
                         {chats.map((chat) => (
                             <Box
                                 onClick={() => setSelectedChat(chat)}
@@ -100,6 +100,7 @@ const MyChats = ({ fetchAgain }) => {
                                 color={"white"}
                                 px={3}
                                 py={2}
+                                minW={"100%"}
                                 borderRadius="lg"
                                 key={chat._id}
                                 display={"flex"}
@@ -113,6 +114,7 @@ const MyChats = ({ fetchAgain }) => {
                                 />
                                 <Box
                                     paddingLeft={"10px"}
+                                    w="100%"
                                 >
 
                                     <Text
