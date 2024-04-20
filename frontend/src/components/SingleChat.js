@@ -15,7 +15,11 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
+<<<<<<< HEAD
 const ENDPOINT = "https://ping-97bm.onrender.com";
+=======
+const ENDPOINT = "http://localhost:5000"; 
+>>>>>>> 10d901db698747d420a277e4f97e19966147e73a
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
