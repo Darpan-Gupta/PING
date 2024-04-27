@@ -1,6 +1,5 @@
-import { Button, ButtonGroup } from '@chakra-ui/react'
 import React from 'react'
-import { Route } from 'react-router-dom/cjs/react-router-dom.min'
+import { Route, Redirect } from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import ChatPage from './Pages/ChatPage'
 import './App.css';
@@ -9,6 +8,9 @@ function App() {
     <div className='main-div'>
       <Route path="/" component={HomePage} exact />
       <Route path="/chats" component={ChatPage} />
+      <Route path="*">
+        <Redirect to="/" />
+      </Route>
     </div >
 
 

@@ -48,7 +48,7 @@ function SideDrawer() {
             toast({
                 title: "Please enter something in search",
                 status: "warning",
-                duration: 5000,
+                duration: 2000,
                 isClosable: true,
                 position: "top-left",
             });
@@ -221,14 +221,31 @@ function SideDrawer() {
                                 placeholder='Search by name or email'
                                 mr={2}
                                 value={search}
-                                onChange={(e) => setSearch(e.target.value)}
+                                onChange={(e) => {
+                                    setSearch(e.target.value);
+                                    handleSearch();
+                                }}
                             >
                             </Input>
                             <Button onClick={handleSearch}>Go</Button>
                         </Box>
                         {loading ? (
                             <ChatLoading />
+
                         ) : (
+                            searchResult.length > 0 ? (
+                                searchResult.map((user) => (
+                                    <UserListItem
+                                        key={user._id}
+                                        user={user}
+                                        handleFunction={() => accessChat(user._id)}
+                                    />
+                                ))
+                            ) : (
+                                <div>No users found.</div> // You can replace this with any message or component you want to show when searchResult is empty
+                            )
+                        )}
+                        {/* ) : (
                             searchResult?.map((user) => (
                                 <UserListItem
                                     key={user._id}
@@ -236,7 +253,7 @@ function SideDrawer() {
                                     handleFunction={() => accessChat(user._id)}
                                 />
                             ))
-                        )}
+                        )} */}
                         {loadingChat && <Spinner ml="auto" display="flex" />}
                     </DrawerBody>
                 </DrawerContent>

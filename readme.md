@@ -1,9 +1,41 @@
-after Forking-->
+# Ping
+Ping is a real-time chat application built using the MERN stack and Socket.IO.
 
-## Add .env file to main folder with content:
-PORT = 5000
-MONGO_URI = // your mongo uri
-JWT_SECRET = mernchatappsecret
-NODE_ENV=production
 
-## And if facing issues in socket.io functionallity update ENDPOINT in SingleChat.js and cors origin in backend/server.js 
+## Features
+
+- Real-time messaging using Socket.IO
+- Create and join chat rooms
+- User authentication (registration and login)
+- Sender typing animation
+- Notification upon receiving a message
+- Responsive design for desktop and mobile devices
+
+
+## Getting Started
+
+If you just want to check out the app, you can use the "Guest User Credentials" and log in with those credentials. Otherwise, just log in, and ask your friends to log in as well, and start chatting
+
+
+Here is a demo video for creating a new chat and start messaging:
+
+
+
+## Installation
+
+- Clone the repository.
+- Make sure you are having the required dependencies installed.
+- Create a `.env` file in the root directory and add the following environment variables: <br>
+PORT = 5000 <br>
+MONGO_URI = // your  MongoDB database uri <br>
+JWT_SECRET = // jwt secret <br>
+NODE_ENV = // (production or debuging) <br>
+- And if facing issues in socket.io functionallity update ENDPOINT in SingleChat.js to "http://localhost:5000" , and cors origin in backend/server.js to "http://localhost:3000" . 
+- To run the server, in the root directory run command 'npm start'
+- To run the frontend, change the directory to frontend, using 'cd frontend' and after that 'npm start'
+
+
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to add new features, please open an issue or submit a pull request.

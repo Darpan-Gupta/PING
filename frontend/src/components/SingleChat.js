@@ -17,6 +17,7 @@ import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
 
 const ENDPOINT = "https://ping-97bm.onrender.com";
+// const ENDPOINT = "http://localhost:5000";
 
 var socket, selectedChatCompare;
 
@@ -192,6 +193,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                         <Avatar
                             display={{ base: "none", md: "flex" }}
                             mr={1}
+                            // md={2}
                             size={"xs"}
                             // name={m.sender.name}
                             src={selectedChat.isGroupChat ? "/group_avatar_image.png" : selectedChat.users[0]._id === user._id ? selectedChat.users[1].pic : selectedChat.users[0].pic}
