@@ -20,6 +20,10 @@ If you just want to check out the app, you can use the "Guest User Credentials" 
 Here is a demo video for creating a new chat and start messaging:
 
 
+https://github.com/Darpan-Gupta/PING/assets/109506781/cb73e902-f139-4144-970f-6b85c7e8a65e
+
+
+
 
 ## Installation
 
